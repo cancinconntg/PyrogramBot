@@ -27,4 +27,4 @@ for etiket in Mention:
 @Client.on_message(filters.command(["start"]))
 async def deneme(bot, update):
 
-assert Client.stop()
+    assert Client.stop()
