@@ -1,4 +1,4 @@
-from pyrogram import Client, sync, utils, types 
+from pyrogram import Client, sync, utils, types, filters 
 import asyncio
 
 @Client.on_message(filters.command(["basla"]))
