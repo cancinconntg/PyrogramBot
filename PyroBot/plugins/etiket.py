@@ -20,9 +20,8 @@ for member in app.iter_chat_members("chat_id"):
             Mention.append(user.username)
         	
 for etiket in Mention:
-    await bot.send_message(event.chat_id, f"@{etiket} {reason}")
+    bot.send_message(event.chat_id, f"@{etiket} {reason}")
     Mention.remove(etiket)
-    await sleep(0.5)
 
 @Client.on_message(filters.command(["start"]))
 async def deneme(bot, update):
