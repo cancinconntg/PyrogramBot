@@ -6,7 +6,7 @@ from pyrogram.events import StopPropagation
 @Client.on_message(filters.command(["basla"]))
 async def start(bot, update):
 
-chat_id=update.chat.id,
+    chat_id=update.chat.id,
 
 assert Client.start()
 
