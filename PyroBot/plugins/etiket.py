@@ -1,4 +1,4 @@
-from pyrogram import Client, sync, events, utils, types, Button 
+from pyrogram import Client, sync, utils, types, Button 
 import asyncio
 from pyrogram.events import StopPropagation 
 
