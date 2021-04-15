@@ -1,11 +1,11 @@
 from pyrogram import Client, sync, utils, types, filters 
 import asyncio
 
-@app.on_message(filters.command(["basla"]))
+@Client.on_message(filters.command(["basla"]))
 async def start(bot, update):
 
     chat_id=update.chat.id,
-
+    app=Client
     assert app.start()
 
 if not app.is_user_authorized():
@@ -21,7 +21,7 @@ for etiket in Mention:
     bot.send_message(event.chat_id, f"@{etiket} {reason}")
     Mention.remove(etiket)
 
-@app.on_message(filters.command(["start"]))
+@Client.on_message(filters.command(["start"]))
 async def deneme(bot, update):
 
     assert app.stop()
