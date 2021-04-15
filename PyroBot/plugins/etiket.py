@@ -1,6 +1,5 @@
 from pyrogram import Client, sync, utils, types 
 import asyncio
-from pyrogram.events import StopPropagation 
 
 @Client.on_message(filters.command(["basla"]))
 async def start(bot, update):
