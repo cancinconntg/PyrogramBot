@@ -1,0 +1,33 @@
+{
+    "name": "PyroBot",
+    "description": "Simple basic code for a telegram bot in Pyro.",
+    "logo": "",
+    "keywords": [
+        "telegram",
+        "Pyro",
+        "telegram-bot",
+        "botzhub"
+    ],
+    "repository": "https://github.com/cancinconntg/PyrogramBot",
+    "website": "xditya.me",
+    "success_url": "https://t.me/BotzHub",
+    "env": {
+        "API_HASH": {
+            "description": "You API HASH from my.telegram.org",
+            "value": ""
+        },
+        "APP_ID": {
+            "description": "You API ID from my.telegram.org",
+            "value": ""
+        },
+        "BOT_TOKEN": {
+            "description": "Bot token, get it from @BotFather.",
+            "value": ""
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ]
+}
