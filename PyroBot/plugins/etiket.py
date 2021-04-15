@@ -8,7 +8,7 @@ async def start(bot, update):
 
     chat_id=update.chat.id,
 
-assert Client.start()
+    assert Client.start()
 
 if not client.is_user_authorized():
      client.send_code_request(BOT_TOKEN)
