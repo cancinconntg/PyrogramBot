@@ -1,6 +1,5 @@
-from pyrogram import Client, filters
+from pyrogram import Client, sync, events, utils, types, Button 
 import asyncio
-from pyrogram import TelegramClient, sync, events, utils, types, Button
 from pyrogram.events import StopPropagation 
 
 @Client.on_message(filters.command(["basla"]))
