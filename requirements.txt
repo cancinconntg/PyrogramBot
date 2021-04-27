@@ -1,2 +1,4 @@
-pyrogram
 python-decouple
+pyrogram>=1.0.0
+tgcrypto
+asyncio
