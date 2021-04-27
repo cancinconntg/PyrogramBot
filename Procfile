@@ -1,1 +1,1 @@
-BotzHub: python -m PyroBot
+BotzHub: python3 -m PyroBot
