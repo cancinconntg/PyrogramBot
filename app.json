@@ -23,6 +23,14 @@
         "BOT_TOKEN": {
             "description": "Bot token, get it from @BotFather.",
             "value": ""
+        },
+        "LOGGER": {
+            "description": "log",
+            "value": "True"
+        },
+        "COMMAND_HAND_LER": {
+            "description": "bilm",
+            "value": "/"
         }
     },
     "buildpacks": [
