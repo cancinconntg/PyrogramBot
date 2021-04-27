@@ -1,41 +1,48 @@
 {
-    "name": "PyroBot",
-    "description": "Simple basic code for a telegram bot in Pyro.",
-    "logo": "",
+    "name": "TagAdminsBot",
+    "repository": "https://github.com/SkuzzyxD/TagAdminsBot",
+    "description": "A simple bot to call all admins in a Group!",
     "keywords": [
+        "pyrogram",
         "telegram",
-        "Pyro",
-        "telegram-bot",
-        "botzhub"
+        "pyrogram bot",
+        "telegram bot",
+        "Tag Admins Bot",
+        "Tag admins telegram"
     ],
-    "repository": "https://github.com/cancinconntg/PyrogramBot",
-    "website": "xditya.me",
-    "success_url": "https://t.me/BotzHub",
+    "website": "https://skuzzers.xyz/",
+    "success_url": "https://t.me/Skuzzers",
     "env": {
-        "API_HASH": {
-            "description": "You API HASH from my.telegram.org",
-            "value": ""
-        },
         "APP_ID": {
-            "description": "You API ID from my.telegram.org",
+            "description": "Your APP_ID fromm my.telegram.org",
+            "required": true,
             "value": ""
         },
-        "BOT_TOKEN": {
-            "description": "Bot token, get it from @BotFather.",
+        "API_HASH": {
+            "description": "Your API_HASH fromm my.telegram.org",
+            "required": true,
             "value": ""
         },
-        "LOGGER": {
-            "description": "log",
-            "value": "True"
+        "TG_BOT_TOKEN": {
+            "description": "Your Bot API Token",
+            "required": true,
+            "value": ""
         },
         "COMMAND_HAND_LER": {
-            "description": "bilm",
+            "description": "Command handler for Bot, enter only 1.",
+            "required": true,
             "value": "/"
+        },
+        "ENV": {
+            "description": "Set as True if you want to use Heroku, which means leave it as it is!",
+            "required": true,
+            "value": "True"
         }
     },
-    "buildpacks": [
-        {
-            "url": "heroku/python"
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
         }
-    ]
+    }
 }
