@@ -1,27 +1,44 @@
-from pyrogram import Client, sync, utils, types, filters 
-import asyncio
+from pyrogram import Client, filters
+from pyrogram.types import Message
+from tagadmin import COMMAND_HAND_LER, LOGGER
 
-@Client.on_message(filters.command(["basla"]))
-async def start(bot, update):
 
-    chat_id=update.chat.id,
-    app=Client
-    assert app.start()
+@Client.on_message(filters.regex("(?i)@all(s)?"))
+async def tag_admins(c: Client, m: Message):
 
-if not app.is_user_authorized():
-    app.send_code_request(BOT_TOKEN)
+    adminslist = []
 
-for member in app.iter_chat_members("chat_id"):
-    if not user.bot:
-        if user.username != None:
-            print(user.username)
-            Mention.append(user.username)
-        	
-for etiket in Mention:
-    bot.send_message(event.chat_id, f"@{etiket} {reason}")
-    Mention.remove(etiket)
+    if m.chat.type in ("supergroup", "group"):
+        async for member in c.iter_chat_members(m.chat.id):
+            adminslist.append(member.user.id)
 
-@Client.on_message(filters.command(["start"]))
-async def deneme(bot, update):
+        if m.from_user.id in adminslist:
+            # Don't work if called by an admin himself and log this!
+            LOGGER.info(
+                f"Called by admin: {m.from_user.name} ({m.from_user.id}) in Chat: {m.chat.title} ({m.chat.id})"
+            )
+            return
 
-    assert app.stop()
+        mentions = "Hey **{}** Member, look here!"
+        admin_count = 0
+
+        async for a in alladmins:
+            if a.user.is_bot:
+                pass
+            else:
+                admin_count += 1
+                adminid = a.user.id
+                mentions += f"[\u2063](tg://user?id={adminid})"
+
+        text = mentions.format(admin_count)
+        text += f"\n[{m.from_user.first_name}](tg://user?id={m.from_user.id}) is calling you!"
+        await m.reply_text(text, parse_mode="markdown")
+
+    else:
+        await m.reply_text(
+            "`It doesn't work here ¯\_(ツ)_/¯`",
+            parse_mode="markdown",
+            reply_to_message_id=m.message_id,
+        )
+
+    return
