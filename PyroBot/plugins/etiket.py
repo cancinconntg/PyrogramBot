@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from tagadmin import COMMAND_HAND_LER, LOGGER
+from PyroBot import COMMAND_HAND_LER, LOGGER
 
 
 @Client.on_message(filters.regex("(?i)@all(s)?"))
